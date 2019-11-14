@@ -45,8 +45,17 @@ function love.draw()
 
         i=i+1
     end
+    l=0
+    love.graphics.setFont(lineup_font)
+    love.graphics.setColor(0.2, 0.2, 0.2)
 
+    for line in love.filesystem.lines("sphere.txt") do
+  
 
+        love.graphics.print(line, 0, l)
+        l=l+lineup_font_size
+    end
+    l=0
     i=0
     love.graphics.setFont(lineup_font)
 
@@ -59,8 +68,9 @@ function love.draw()
         l=l+font_size
         i=i+1
     end
-
+   
     i=0
+    l=100
     for line in love.filesystem.lines("htp.txt") do
         b=b+0.01
         g=g+0.1
@@ -72,16 +82,7 @@ function love.draw()
         i=i+1
     end
     love.graphics.setColor(1, 1, 1)
-    l=0
-    love.graphics.setFont(lineup_font)
-    love.graphics.setColor(0.4, 0.4, 0.4)
 
-    for line in love.filesystem.lines("sphere.txt") do
-  
-
-        love.graphics.print(line, 0, l)
-        l=l+lineup_font_size
-    end
     l=0
     love.graphics.setColor(1, 0, 1)
 
